@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body>
+    <h1>Simulador Financeiro</h1>
+    Quantidade total de plantas de café: <input type="text" id="qnt_total_planta"><br>
+    Quantidade total de sacas produzidas: <input type="text" id="qnt_total_sacas"><br>
+    Preço de cada saca: <input type="number" id="preco_saca"><br><br>
+    <button onclick="calcular()">Calcular</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        var saca = 60.0
+        var planta_cafe = 2.5
+        var quantidade_saca = (Number(qnt_total_planta.value) * planta_cafe) / saca
+        var perda_saca = quantidade_saca - Number(qnt_total_sacas.value)
+        var valor_ganho_atual = Number(qnt_total_sacas.value) * Number(preco_saca.value)
+        var lucro = perda_saca * Number(preco_saca.value)
+        var valor_final = valor_ganho_atual + lucro
+
+        resultado.innerHTML = `Você produziu ${Number(qnt_total_sacas.value)} saca(s) e perdeu ${perda_saca} saca(s),
+        tendo um ganho de R$${valor_ganho_atual}. Com o nosso serviço estima-se uma produção de ${quantidade_saca} sacas e terá
+        um ganho de R$${valor_final}!`
+
+    }
+
+</script>
