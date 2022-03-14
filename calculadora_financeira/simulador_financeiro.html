@@ -63,10 +63,12 @@
         var planta_cafe = 2.5
         var quantidade_saca = (Number(qnt_total_planta.value) * planta_cafe) / saca
         var perda_saca = quantidade_saca - Number(qnt_total_sacas.value)
+        var estimativa_saca = quantidade_saca - (perda_saca / 2)
         var valor_ganho_atual = Number(qnt_total_sacas.value) * Number(preco_saca.value)
         var lucro = perda_saca * Number(preco_saca.value)
         var valor_final = valor_ganho_atual + lucro
-        var porcentagem = (perda_saca / quantidade_saca) * 100
+        var estimativa_valor = valor_final - (lucro / 2)
+        
 
         resultado.innerHTML = `Você produziu ${Number(qnt_total_sacas.value)} saca(s) e perdeu ${perda_saca} saca(s),
         tendo um ganho de R$${valor_ganho_atual}. Com o nosso serviço estima-se uma produção de ${quantidade_saca} 
@@ -75,9 +77,9 @@
         resultado.innerHTML = `Você produziu <b style='color: #361E0B'><u>${Number(qnt_total_sacas.value)}</u></b> 
         saca(s) e perdeu <b style='color: #D10007'><u>${perda_saca}</u></b> saca(s),
         tendo um ganho de <b style='color: #361E0B'><u>R$${valor_ganho_atual}</u></b>.<br> Com o nosso serviço estima-se uma produção de 
-        <b style='color: #2C9A0C'><u>${quantidade_saca}</u></b> sacas e terá
-        um ganho de <b style='color: #2C9A0C'><u>R$${valor_final}</u></b>!<br>
-        Estima-se um aumento percentual de <b style='color: #2C9A0C'><u>${porcentagem}%</u></b> na sua produção!`
+        <b style='color: #2C9A0C'><u>${estimativa_saca}</u></b> sacas e terá
+        um ganho total de <b style='color: #2C9A0C'><u>R$${estimativa_valor}</u></b>!<br>
+        Estima-se uma redução na perda de <b style='color: #2C9A0C'><u>50%</u></b> na sua produção por conta de variações climáticas!`
 
 
     }
