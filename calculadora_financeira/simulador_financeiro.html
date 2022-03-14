@@ -5,14 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador Financeiro</title>
+    <style>
+        h1 {
+            font-family: monospace;
+            color: #D10007;
+        }
+        
+        span {
+            font-family: monospace;
+        }
+
+        button {
+            font-family: monospace;
+            background-color: #2C9A0C;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        button:hover{
+            background-color: #27850b;
+            cursor: pointer;
+        }
+
+        #resultado {
+            font-family: monospace;
+            font-size: 15px;
+        }
+        
+
+    </style>
 </head>
 <body>
-    <h1>Simulador Financeiro</h1>
-    Quantidade total de plantas de café: <input type="text" id="qnt_total_planta"><br>
-    Quantidade total de sacas produzidas: <input type="text" id="qnt_total_sacas"><br>
-    Preço de cada saca: <input type="number" id="preco_saca"><br><br>
-    <button onclick="calcular()">Calcular</button>
-    <div id="resultado"></div>
+    <div>
+        <div style="width: 30%; margin-left: 40%;">
+            <h1>Simulador Financeiro</h1>
+        </div>
+        <div style="width: 40%; margin-left: 35%;">
+            <span>Quantidade total de plantas de café:</span> <input type="text" id="qnt_total_planta"><br><br>
+            <span>Quantidade total de sacas produzidas:</span> <input type="text" id="qnt_total_sacas"><br><br>
+            <span>Preço de cada saca:</span> <input type="number" id="preco_saca"><br><br>
+        </div>
+        <div style="width: 40%; margin-left: 47%;">
+            <button onclick="calcular()">Calcular</button>
+        </div>
+        <div style="height: 15px;"></div>
+        <div id="resultado" style="width: 50%; margin-left: 30%;"></div>
+    </div>
 </body>
 </html>
 
@@ -26,10 +66,20 @@
         var valor_ganho_atual = Number(qnt_total_sacas.value) * Number(preco_saca.value)
         var lucro = perda_saca * Number(preco_saca.value)
         var valor_final = valor_ganho_atual + lucro
+        var porcentagem = (perda_saca / quantidade_saca) * 100
 
+<<<<<<< HEAD
         resultado.innerHTML = `Você produziu ${Number(qnt_total_sacas.value)} saca(s) e perdeu ${perda_saca} saca(s),
         tendo um ganho de R$${valor_ganho_atual}. Com o nosso serviço estima-se uma produção de ${quantidade_saca} 
         sacas e terá um ganho de R$${valor_final}!`
+=======
+        resultado.innerHTML = `Você produziu <b style='color: #361E0B'><u>${Number(qnt_total_sacas.value)}</u></b> 
+        saca(s) e perdeu <b style='color: #D10007'><u>${perda_saca}</u></b> saca(s),
+        tendo um ganho de <b style='color: #361E0B'><u>R$${valor_ganho_atual}</u></b>.<br> Com o nosso serviço estima-se uma produção de 
+        <b style='color: #2C9A0C'><u>${quantidade_saca}</u></b> sacas e terá
+        um ganho de <b style='color: #2C9A0C'><u>R$${valor_final}</u></b>!<br>
+        Estima-se um aumento percentual de <b style='color: #2C9A0C'><u>${porcentagem}%</u></b> na sua produção!`
+>>>>>>> 81d8d509b53235fd8196453bda232a1e43a13586
 
     }
 
