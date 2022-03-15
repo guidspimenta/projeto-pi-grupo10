@@ -76,7 +76,7 @@
 
         resultado.innerHTML = `Você produziu <b style='color: #361E0B'><u>${Number(qnt_total_sacas.value)}</u></b> 
         saca(s) e perdeu <b style='color: #D10007'><u>${perda_saca}</u></b> saca(s),
-        tendo um ganho de <b style='color: #361E0B'><u>R$${valor_ganho_atual}</u></b>.<br> Com o nosso serviço estima-se uma produção de 
+        tendo um ganho de <b style='color: #361E0B'><u>R$${valor_ganho_atual.toLocaleString("pt-BR" ,{currency})}</u></b>.<br> Com o nosso serviço estima-se uma produção de 
         <b style='color: #2C9A0C'><u>${estimativa_saca}</u></b> sacas e terá
         um ganho total de <b style='color: #2C9A0C'><u>R$${estimativa_valor}</u></b>!<br>
         Estima-se uma redução na perda de <b style='color: #2C9A0C'><u>50%</u></b> na sua produção por conta de variações climáticas!`
