@@ -70,7 +70,7 @@ select * from monitoramento;
 select * from usuario;
 drop table usuario ;
 update monitorimento set idEmpresa = "6" where idMonitoramento = "1";
-]
+
 
 
 
